@@ -1,0 +1,66 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Journal list</h1>
+
+    <table class="records_list" border=1>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Catégorie</th>
+                <th>Référence</th>
+                <th>Désignation</th>
+                <th>Prixht</th>
+                <th>Prixttc</th>
+                <th>Quantite</th>
+                <th>Dateha</th>
+                <th>Datecreation</th>
+                <th>Createurmouvement</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('journal_show', { 'id': entity.idMouvement }) }}">{{ entity.idMouvement }}</a></td>
+                <td> {{ entity.idArticle.idCategorie.nom }} </td>
+                <td> {{ entity.idArticle.reference }} </td>
+                <td> {{ entity.idArticle.designation }} </td>
+                <td>{{ entity.prixht }}</td>
+                <td>{{ entity.prixttc }}</td>
+                <td>{{ entity.quantite }}</td>
+                <td>{% if entity.dateha %}{{ entity.dateha|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.dateCreation %}{{ entity.dateCreation|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.createurMouvement }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('journal_show', { 'id': entity.idMouvement }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('journal_edit', { 'id': entity.idMouvement }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            Quantité totale : {{ quantites }}
+        </li>
+        <li>
+            Prix HT total : {{ prixHT }}
+        </li>
+        <li>
+            Prix TTC total : {{ prixTTC }}
+        </li>
+        <li>
+            <a href="{{ path('journal_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

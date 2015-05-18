@@ -2,13 +2,14 @@
 
 namespace GEII\StockBundle\Entity;
 
+
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Journal
  *
  * @ORM\Table(name="journal", indexes={@ORM\Index(name="createur_mouvement", columns={"createur_mouvement"}), @ORM\Index(name="id_article", columns={"id_article"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="GEII\StockBundle\Entity\Repository\JournalRepository")
  */
 class Journal
 {

@@ -12,26 +12,30 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Article
 {
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="reference", type="string", length=60, nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $reference;
 
     /**
      * @var integer
      *
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      * @ORM\Column(name="id_article", type="integer", nullable=false)
      */
     private $idArticle;
 
     /**
-     * @var integer
+     * @var string
      *
-     * @ORM\Column(name="id_categorie", type="integer", nullable=false)
+     * @ORM\Column(name="reference", type="string", length=60, nullable=false)
+     */
+    private $reference;
+
+    /**
+     * @var /Categorie
+     *
+     * @ORM\ManyToOne(targetEntity="Categorie")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_categorie", referencedColumnName="id_categorie")
+     * })
      */
     private $idCategorie = '0';
 

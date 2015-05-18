@@ -1,0 +1,52 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Journal</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Idmouvement</th>
+                <td>{{ entity.idMouvement }}</td>
+            </tr>
+            <tr>
+                <th>Prixht</th>
+                <td>{{ entity.prixht }}</td>
+            </tr>
+            <tr>
+                <th>Prixttc</th>
+                <td>{{ entity.prixttc }}</td>
+            </tr>
+            <tr>
+                <th>Quantite</th>
+                <td>{{ entity.quantite }}</td>
+            </tr>
+            <tr>
+                <th>Dateha</th>
+                <td>{{ entity.dateha|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Datecreation</th>
+                <td>{{ entity.dateCreation|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Createurmouvement</th>
+                <td>{{ entity.createurMouvement }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('journal') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('journal_edit', { 'id': entity.idMouvement }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

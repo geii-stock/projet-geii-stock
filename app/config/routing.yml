@@ -3,4 +3,9 @@ geii_stock:
     type:     annotation
     prefix:   /
 
+geii_stock:
+    resource: "@GEIIStockBundle/Controller/"
+    type:     annotation
+    prefix:   /consulter-reference
+
 

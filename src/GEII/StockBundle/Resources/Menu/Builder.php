@@ -1,5 +1,5 @@
 // src/GEII/StockBundle/Ressources/Menu/Builder.php
-namespace GEII\StockBundle\Ressources/Menu;
+namespace GEII\StockBundle\Ressources\Menu\Builder.php;
 
 use Knp\Menu\FactoryInterface;
 use Symfony\Component\DependencyInjection\ContainerAware;
