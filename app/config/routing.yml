@@ -1,0 +1,6 @@
+geii_stock:
+    resource: "@GEIIStockBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+
