@@ -6,12 +6,12 @@
     <table class="record_properties">
         <tbody>
             <tr>
-                <th>Reference</th>
-                <td>{{ entity.reference }}</td>
-            </tr>
-            <tr>
                 <th>Idarticle</th>
                 <td>{{ entity.idArticle }}</td>
+            </tr>
+            <tr>
+                <th>Reference</th>
+                <td>{{ entity.reference }}</td>
             </tr>
             <tr>
                 <th>Idcategorie</th>
@@ -59,7 +59,7 @@
         </a>
     </li>
     <li>
-        <a href="{{ path('article_edit', { 'id': entity.reference }) }}">
+        <a href="{{ path('article_edit', { 'id': entity.idArticle }) }}">
             Edit
         </a>
     </li>

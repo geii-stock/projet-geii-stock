@@ -12,21 +12,22 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Article
 {
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="reference", type="string", length=60, nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $reference;
 
     /**
      * @var integer
      *
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      * @ORM\Column(name="id_article", type="integer", nullable=false)
      */
     private $idArticle;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="reference", type="string", length=60, nullable=false)
+     */
+    private $reference;
 
     /**
      * @var integer
