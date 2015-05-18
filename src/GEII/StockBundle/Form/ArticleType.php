@@ -16,8 +16,14 @@ class ArticleType extends AbstractType
     {
         $builder
             ->add('reference')
-            ->add('idCategorie')
-            ->add('idSousCategorie')
+            ->add('idCategorie','entity',array(
+                'class' => 'GEII\StockBundle\Entity\Categorie',
+                'property' => 'nom')
+            )
+            ->add('idSousCategorie','entity',array(
+                'class' => 'GEII\StockBundle\Entity\SousCategorie',
+                'property' => 'nom')
+                )
             ->add('designation')
             ->add('idDestination')
             ->add('idSousDestination')
