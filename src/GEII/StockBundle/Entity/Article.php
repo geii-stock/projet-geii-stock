@@ -40,9 +40,12 @@ class Article
     private $idCategorie = '0';
 
     /**
-     * @var integer
+     * @var /SousCategorie
      *
-     * @ORM\Column(name="id_sous_categorie", type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity="SousCategorie")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_sous_categorie", referencedColumnName="id_soucat")
+     * })
      */
     private $idSousCategorie;
 

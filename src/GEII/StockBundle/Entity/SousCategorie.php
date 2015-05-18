@@ -29,9 +29,12 @@ class SousCategorie
     private $nom;
 
     /**
-     * @var integer
+     * @var /Categorie
      *
-     * @ORM\Column(name="id_categorie_mere", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Categorie")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_categorie_mere", referencedColumnName="id_categorie")
+     * })
      */
     private $idCategorieMere;
 
