@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Journalvieux" table="journalvieux">
+    <indexes>
+      <index name="createur_mouvement" columns="createur_mouvement"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="reference_2" columns="reference"/>
+    </unique-constraints>
+    <id name="idMouvement" type="integer" column="id_mouvement">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="reference" type="string" column="reference" length="60" nullable="true"/>
+    <field name="prixht" type="decimal" column="prixht" precision="10" scale="2" nullable="false"/>
+    <field name="prixttc" type="decimal" column="prixttc" precision="10" scale="2" nullable="false"/>
+    <field name="quantite" type="integer" column="quantite" nullable="false"/>
+    <field name="dateha" type="date" column="dateha" nullable="false"/>
+    <field name="dateCreation" type="datetime" column="date_creation" nullable="true"/>
+    <field name="createurMouvement" type="string" column="createur_mouvement" length="60" nullable="false"/>
+  </entity>
+</doctrine-mapping>

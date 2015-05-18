@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Article" table="article">
+    <indexes>
+      <index name="id_article" columns="id_article"/>
+      <index name="id_categorie" columns="id_categorie"/>
+      <index name="id_sous_categorie" columns="id_sous_categorie"/>
+      <index name="id_destination" columns="id_destination"/>
+      <index name="id_sous_destination" columns="id_sous_destination"/>
+      <index name="createur_article" columns="createur_article"/>
+    </indexes>
+    <id name="reference" type="string" column="reference" length="60">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="idArticle" type="integer" column="id_article" nullable="false"/>
+    <field name="idCategorie" type="integer" column="id_categorie" nullable="false"/>
+    <field name="idSousCategorie" type="integer" column="id_sous_categorie" nullable="true"/>
+    <field name="designation" type="string" column="designation" length="60" nullable="false"/>
+    <field name="idDestination" type="integer" column="id_destination" nullable="false"/>
+    <field name="idSousDestination" type="integer" column="id_sous_destination" nullable="false"/>
+    <field name="udv" type="integer" column="udv" nullable="true"/>
+    <field name="seuilbas" type="integer" column="seuilbas" nullable="true"/>
+    <field name="dateCreation" type="datetime" column="date_creation" nullable="false"/>
+    <field name="createurArticle" type="string" column="createur_article" length="60" nullable="false"/>
+  </entity>
+</doctrine-mapping>

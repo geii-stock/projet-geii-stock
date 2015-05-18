@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Utilisateurs" table="utilisateurs">
+    <indexes>
+      <index name="id_statut" columns="id_statut"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="id_utilisateur" columns="id_utilisateur"/>
+    </unique-constraints>
+    <id name="login" type="string" column="login" length="60">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="idUtilisateur" type="integer" column="id_utilisateur" nullable="false"/>
+    <field name="nom" type="string" column="nom" length="60" nullable="true"/>
+    <field name="prenom" type="string" column="prenom" length="60" nullable="true"/>
+    <field name="mdp" type="string" column="mdp" length="255" nullable="false"/>
+    <field name="mail" type="string" column="mail" length="255" nullable="false"/>
+    <field name="dateCreation" type="datetime" column="date_creation" nullable="true"/>
+    <field name="alerteseuilbas" type="boolean" column="alerteseuilbas" nullable="true"/>
+    <field name="alertedepot" type="boolean" column="alertedepot" nullable="true"/>
+    <field name="alerteretrait" type="boolean" column="alerteretrait" nullable="true"/>
+    <field name="alertecreeref" type="boolean" column="alertecreeref" nullable="true"/>
+    <many-to-one field="idStatut" target-entity="Statut">
+      <join-columns>
+        <join-column name="id_statut" referenced-column-name="id_statut"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

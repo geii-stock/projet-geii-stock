@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="SousCategorie" table="sous_categorie">
+    <indexes>
+      <index name="id_categorie_mere" columns="id_categorie_mere"/>
+    </indexes>
+    <id name="idSoucat" type="integer" column="id_soucat">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nom" type="string" column="nom" length="255" nullable="false"/>
+    <field name="idCategorieMere" type="integer" column="id_categorie_mere" nullable="false"/>
+    <field name="dateCreation" type="datetime" column="date_creation" nullable="false"/>
+    <field name="createur" type="string" column="createur" length="60" nullable="false"/>
+  </entity>
+</doctrine-mapping>
