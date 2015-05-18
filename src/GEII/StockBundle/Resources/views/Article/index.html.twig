@@ -1,0 +1,59 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Article list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Reference</th>
+                <th>Idarticle</th>
+                <th>Idcategorie</th>
+                <th>Idsouscategorie</th>
+                <th>Designation</th>
+                <th>Iddestination</th>
+                <th>Idsousdestination</th>
+                <th>Udv</th>
+                <th>Seuilbas</th>
+                <th>Datecreation</th>
+                <th>Createurarticle</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('article_show', { 'id': entity.reference }) }}">{{ entity.reference }}</a></td>
+                <td>{{ entity.idArticle }}</td>
+                <td>{{ entity.idCategorie }}</td>
+                <td>{{ entity.idSousCategorie }}</td>
+                <td>{{ entity.designation }}</td>
+                <td>{{ entity.idDestination }}</td>
+                <td>{{ entity.idSousDestination }}</td>
+                <td>{{ entity.udv }}</td>
+                <td>{{ entity.seuilbas }}</td>
+                <td>{% if entity.dateCreation %}{{ entity.dateCreation|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.createurArticle }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('article_show', { 'id': entity.reference }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('article_edit', { 'id': entity.reference }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('article_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

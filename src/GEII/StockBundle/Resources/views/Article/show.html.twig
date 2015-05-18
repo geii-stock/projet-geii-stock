@@ -1,0 +1,68 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Article</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Reference</th>
+                <td>{{ entity.reference }}</td>
+            </tr>
+            <tr>
+                <th>Idarticle</th>
+                <td>{{ entity.idArticle }}</td>
+            </tr>
+            <tr>
+                <th>Idcategorie</th>
+                <td>{{ entity.idCategorie }}</td>
+            </tr>
+            <tr>
+                <th>Idsouscategorie</th>
+                <td>{{ entity.idSousCategorie }}</td>
+            </tr>
+            <tr>
+                <th>Designation</th>
+                <td>{{ entity.designation }}</td>
+            </tr>
+            <tr>
+                <th>Iddestination</th>
+                <td>{{ entity.idDestination }}</td>
+            </tr>
+            <tr>
+                <th>Idsousdestination</th>
+                <td>{{ entity.idSousDestination }}</td>
+            </tr>
+            <tr>
+                <th>Udv</th>
+                <td>{{ entity.udv }}</td>
+            </tr>
+            <tr>
+                <th>Seuilbas</th>
+                <td>{{ entity.seuilbas }}</td>
+            </tr>
+            <tr>
+                <th>Datecreation</th>
+                <td>{{ entity.dateCreation|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Createurarticle</th>
+                <td>{{ entity.createurArticle }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('article') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('article_edit', { 'id': entity.reference }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}
