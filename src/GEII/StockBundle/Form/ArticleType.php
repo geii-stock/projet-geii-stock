@@ -15,22 +15,50 @@ class ArticleType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('reference')
+            ->add('reference','text',array(
+                'label' => 'Référence',
+                'required' => true
+                ))
             ->add('idCategorie','entity',array(
+                'label' => 'Catégorie',
                 'class' => 'GEII\StockBundle\Entity\Categorie',
-                'property' => 'nom')
+                'property' => 'nom',
+                'required' => true
+                )
             )
             ->add('idSousCategorie','entity',array(
+                'label' => 'Sous-catégorie',
                 'class' => 'GEII\StockBundle\Entity\SousCategorie',
+                'property' => 'nom',
+                'required' => true)
+                )
+            ->add('designation','text',array(
+                'label' => 'Désignation',
+                'required' => true
+                ))
+            ->add('idDestination','entity',array(
+                'label' => 'Déstination',
+                'class' => 'GEII\StockBundle\Entity\Destination',
                 'property' => 'nom')
                 )
-            ->add('designation')
-            ->add('idDestination')
-            ->add('idSousDestination')
-            ->add('udv')
-            ->add('seuilbas')
-            ->add('dateCreation')
-            ->add('createurArticle')
+            ->add('idSousDestination','entity',array(
+                'label' => 'sous-déstination',
+                'class' => 'GEII\StockBundle\Entity\SousDestination',
+                'property' => 'nom')
+                )
+            ->add('udv','text',array(
+                'label' => 'UDV'
+                ))
+            ->add('seuilbas','text',array(
+                'label' => 'Seuil bas'
+                ))
+            ->add('dateCreation','datetime',array(
+                'attr' => array('class' => 'hide'),
+                'label' => false
+                ))
+            ->add('createurArticle','text',array(
+                'label' => 'Auteur',
+                ))
         ;
     }
     
