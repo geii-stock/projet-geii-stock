@@ -57,16 +57,22 @@ class Article
     private $designation;
 
     /**
-     * @var integer
+     * @var /Destination
      *
-     * @ORM\Column(name="id_destination", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Destination")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_destination", referencedColumnName="id_destination")
+     * })
      */
     private $idDestination;
 
     /**
-     * @var integer
+     * @var /SousDestination
      *
-     * @ORM\Column(name="id_sous_destination", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="SousDestination")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_sous_destination", referencedColumnName="id_sousdest")
+     * })
      */
     private $idSousDestination;
 
@@ -111,14 +117,14 @@ class Article
     }
 
     /**
-     * Set idArticle
+     * Set reference
      *
-     * @param integer $idArticle
+     * @param integer $reference
      * @return Article
      */
-    public function setIdArticle($idArticle)
+    public function setReference($reference)
     {
-        $this->idArticle = $idArticle;
+        $this->reference = $reference;
 
         return $this;
     }

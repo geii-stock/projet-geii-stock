@@ -28,8 +28,8 @@
                 <td>{{ entity.idCategorie.nom }}</td>
                 <td>{{ entity.idSousCategorie.nom }}</td>
                 <td>{{ entity.designation }}</td>
-                <td>{{ entity.idDestination }}</td>
-                <td>{{ entity.idSousDestination }}</td>
+                <td>{{ entity.idDestination.idDestination }}</td>
+                <td>{{ entity.idSousDestination.idSousdest }}</td>
                 <td>{{ entity.udv }}</td>
                 <td>{{ entity.seuilbas }}</td>
                 <td>{% if entity.dateCreation %}{{ entity.dateCreation|date('Y-m-d H:i:s') }}{% endif %}</td>
