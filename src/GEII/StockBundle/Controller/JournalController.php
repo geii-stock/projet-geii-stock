@@ -62,7 +62,7 @@ class JournalController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('journal_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('journal_show', array('id' => $entity->getIdMouvement())));
         }
 
         return array(
@@ -170,7 +170,7 @@ class JournalController extends Controller
     private function createEditForm(Journal $entity)
     {
         $form = $this->createForm(new JournalType(), $entity, array(
-            'action' => $this->generateUrl('journal_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('journal_update', array('id' => $entity->getIdMouvement())),
             'method' => 'PUT',
         ));
 
