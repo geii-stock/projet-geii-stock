@@ -1,5 +1,21 @@
+body{
+	padding: 50px;
+}
+
 form {
-	padding: 100px;
+	padding: 50px;
+}
+
+ul {
+	padding-left: 10px;
+}
+
+ul li {
+	list-style: none;
+}
+
+td {
+	padding: 15px;
 }
 
 .hide {
