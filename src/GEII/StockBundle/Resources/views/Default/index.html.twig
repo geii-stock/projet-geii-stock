@@ -1,17 +1,15 @@
 Menu principal de : bac-a-sable
 
-	
-
 {#{{ knp_menu_render('GEIIStockBundle:Builder:mainMenu') }}#}
 
 
 <h1>Opération sur le stock </h1>
 <ul>
-	<li>Consulter l'état du stock</li>
-	<li>Déposer dans le stock</li>
+	<li><a href="{{ path('journal') }}">Consulter l'état du stock</a></li>
+	<li><a href="{{ path('journal_new') }}">Déposer dans le stock</a></li>
 </ul>
 <h1>Opération sur les références </h1>
 <ul>
-	<li>Consulter les références</li>
-	<li>Déposer nouvelle référence</li>
+	<li><a href="{{ path('article') }}">Consulter les références</a></li>
+	<li><a href="{{ path('article_new') }}">Déposer nouvelle référence</a></li>
 </ul>
