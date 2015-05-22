@@ -75,6 +75,10 @@ class Journal
     private $idArticle;
 
 
+    public function __construct()
+    {
+        $this->dateCreation = new \DateTime();
+    }
 
     /**
      * Get idMouvement
@@ -246,4 +250,5 @@ class Journal
     {
         return $this->idArticle;
     }
+
 }

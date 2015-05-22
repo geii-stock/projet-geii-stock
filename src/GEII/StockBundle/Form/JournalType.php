@@ -20,23 +20,27 @@ class JournalType extends AbstractType
                 'class' => 'GEII\StockBundle\Entity\Article',
                 'property' => 'reference')
                 )
-            ->add('prixht','text',array(
+            ->add('prixht','money',array(
                 'label' => 'Prix d\'achat (HT) :',
                 'attr' => array('placeholder' => 'Exemple: 235.95','size' => 25)
                 ))
-            ->add('prixttc','text',array(
+            ->add('prixttc','money',array(
                 'label' => 'Prix d\'achat (TTC) :',
                 'attr' => array('placeholder' => 'Exemple: 5.5','size' => 25)
                 ))
-            ->add('quantite','text',array(
+            ->add('quantite','number',array(
                 'label' => 'Quantité :',
                 'attr' => array('placeholder' => 'Exemple: 123','size' => 25)
                 ))
-            ->add('dateha','text',array(
+            ->add('dateha','date',array(
                 'label' => 'Date d\'achat (+) :'
                 ))
-            ->add('dateCreation')
-            ->add('createurMouvement')
+            ->add('dateCreation','datetime',array(
+                'attr' => array('sytle' => 'display:none;')
+                ))
+            ->add('createurMouvement','text',array(
+                'label' => 'Auteur',
+                ))
         ;
     }
     
