@@ -36,7 +36,8 @@ class JournalType extends AbstractType
                 'label' => 'Date d\'achat (+) :'
                 ))
             ->add('dateCreation','datetime',array(
-                'attr' => array('sytle' => 'display:none;')
+                'attr' => array('class' => 'hide'),
+                'label' => false
                 ))
             ->add('createurMouvement','text',array(
                 'label' => 'Auteur',
